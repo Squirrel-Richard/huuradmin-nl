@@ -191,7 +191,7 @@ export default function LandingPage() {
             <span className="text-sm font-medium">Betaalbare Huurwet van kracht — bent u compliant?</span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Verhuur beheren{' '}
             <span
               className="inline-block"
