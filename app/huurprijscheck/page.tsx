@@ -53,13 +53,13 @@ export default function HuurprijscheckPage() {
   }
 
   return (
-    <div className="min-h-screen" style={{ background: '#06060f' }}>
+    <div className="min-h-screen" style={{ background: '#030810' }}>
       <WebGLBackground />
 
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4"
         style={{
-          background: 'rgba(6,6,15,0.7)',
+          background: 'rgba(3,8,16,0.7)',
           backdropFilter: 'blur(20px)',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
         }}
@@ -70,7 +70,7 @@ export default function HuurprijscheckPage() {
         </Link>
         <Link href="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold"
-            style={{ background: 'linear-gradient(135deg, #6366f1, #22d3ee)' }}>H</div>
+            style={{ background: 'rgba(77,184,255,0.15)' }}>H</div>
           <span className="font-semibold text-white">HuurAdmin NL</span>
         </Link>
         <Link href="/onboarding" className="btn-primary text-sm px-4 py-2 rounded-xl">
@@ -86,9 +86,9 @@ export default function HuurprijscheckPage() {
           className="text-center mb-12"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)' }}>
-            <Calculator className="w-4 h-4 text-indigo-400" />
-            <span className="text-sm text-indigo-400 font-medium">Gratis tool — Betaalbare Huurwet 2024</span>
+            style={{ background: 'rgba(77,184,255,0.1)', border: '1px solid rgba(77,184,255,0.2)' }}>
+            <Calculator className="w-4 h-4 text-blue-400" />
+            <span className="text-sm text-blue-400 font-medium">Gratis tool — Betaalbare Huurwet 2024</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Huurprijscheck
@@ -108,7 +108,7 @@ export default function HuurprijscheckPage() {
           >
             <div className="glass-card p-6 space-y-6">
               <h2 className="text-white font-semibold flex items-center gap-2">
-                <Home className="w-5 h-5 text-indigo-400" />
+                <Home className="w-5 h-5 text-blue-400" />
                 Woning gegevens
               </h2>
 
@@ -122,9 +122,9 @@ export default function HuurprijscheckPage() {
                       onClick={() => update('type', t)}
                       className="py-2 px-3 rounded-xl text-sm font-medium capitalize transition-all"
                       style={{
-                        background: form.type === t ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.05)',
-                        border: `1px solid ${form.type === t ? 'rgba(99,102,241,0.4)' : 'rgba(255,255,255,0.08)'}`,
-                        color: form.type === t ? '#6366f1' : 'rgba(255,255,255,0.6)',
+                        background: form.type === t ? 'rgba(77,184,255,0.2)' : 'rgba(255,255,255,0.05)',
+                        border: `1px solid ${form.type === t ? 'rgba(77,184,255,0.4)' : 'rgba(255,255,255,0.08)'}`,
+                        color: form.type === t ? '#4db8ff' : 'rgba(255,255,255,0.6)',
                       }}
                     >
                       {t}
@@ -189,9 +189,9 @@ export default function HuurprijscheckPage() {
                       onClick={() => update('energielabel', label)}
                       className="py-1 px-2.5 rounded-lg text-xs font-bold transition-all"
                       style={{
-                        background: form.energielabel === label ? 'rgba(99,102,241,0.3)' : 'rgba(255,255,255,0.05)',
-                        border: `1px solid ${form.energielabel === label ? 'rgba(99,102,241,0.5)' : 'rgba(255,255,255,0.08)'}`,
-                        color: form.energielabel === label ? '#6366f1' : 'rgba(255,255,255,0.5)',
+                        background: form.energielabel === label ? 'rgba(77,184,255,0.3)' : 'rgba(255,255,255,0.05)',
+                        border: `1px solid ${form.energielabel === label ? 'rgba(77,184,255,0.5)' : 'rgba(255,255,255,0.08)'}`,
+                        color: form.energielabel === label ? '#4db8ff' : 'rgba(255,255,255,0.5)',
                       }}
                     >
                       {label}
@@ -359,8 +359,8 @@ export default function HuurprijscheckPage() {
                           style={{
                             width: `${Math.min((resultaat.punten / 300) * 100, 100)}%`,
                             background: resultaat.punten >= LIBERALISATIEGRENS_PUNTEN
-                              ? 'linear-gradient(90deg, #10b981, #22d3ee)'
-                              : 'linear-gradient(90deg, #6366f1, #f59e0b)',
+                              ? 'linear-gradient(90deg, #10b981, #4db8ff)'
+                              : 'linear-gradient(90deg, #4db8ff, #f59e0b)',
                           }}
                         />
                       </div>
@@ -392,7 +392,7 @@ export default function HuurprijscheckPage() {
                                   className="h-full rounded-full"
                                   style={{
                                     width: `${Math.min((value / 50) * 100, 100)}%`,
-                                    background: 'linear-gradient(90deg, #6366f1, #22d3ee)',
+                                    background: 'linear-gradient(90deg, #4db8ff, #4db8ff)',
                                   }}
                                 />
                               </div>
@@ -424,8 +424,8 @@ export default function HuurprijscheckPage() {
                   className="glass-card p-12 text-center"
                 >
                   <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
-                    style={{ background: 'rgba(99,102,241,0.1)' }}>
-                    <Calculator className="w-8 h-8 text-indigo-400 animate-breathe" />
+                    style={{ background: 'rgba(77,184,255,0.1)' }}>
+                    <Calculator className="w-8 h-8 text-blue-400 animate-breathe" />
                   </div>
                   <p className="text-white/40 text-sm">
                     Vul de woning gegevens in en klik op &ldquo;Bereken&rdquo; om de maximale huurprijs te zien.
@@ -435,7 +435,7 @@ export default function HuurprijscheckPage() {
             </AnimatePresence>
 
             {/* Info box */}
-            <div className="glass-card p-4" style={{ borderColor: 'rgba(34,211,238,0.1)' }}>
+            <div className="glass-card p-4" style={{ borderColor: 'rgba(77,184,255,0.1)' }}>
               <div className="flex items-start gap-3">
                 <Info className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
                 <div className="text-xs text-white/50 leading-relaxed">

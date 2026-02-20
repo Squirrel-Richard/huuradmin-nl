@@ -63,7 +63,7 @@ export default function OnboardingPagina() {
     : null
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-16" style={{ background: '#06060f' }}>
+    <div className="min-h-screen flex items-center justify-center px-6 py-16" style={{ background: '#030810' }}>
       <WebGLBackground />
 
       <div className="w-full max-w-lg">
@@ -88,13 +88,13 @@ export default function OnboardingPagina() {
                   <div
                     className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
                     style={{
-                      background: done ? 'rgba(16,185,129,0.2)' : active ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.05)',
-                      border: `1px solid ${done ? 'rgba(16,185,129,0.4)' : active ? 'rgba(99,102,241,0.4)' : 'rgba(255,255,255,0.1)'}`,
+                      background: done ? 'rgba(16,185,129,0.2)' : active ? 'rgba(77,184,255,0.2)' : 'rgba(255,255,255,0.05)',
+                      border: `1px solid ${done ? 'rgba(16,185,129,0.4)' : active ? 'rgba(77,184,255,0.4)' : 'rgba(255,255,255,0.1)'}`,
                     }}
                   >
                     {done
                       ? <Check className="w-4 h-4 text-green-400" />
-                      : <Icon className="w-4 h-4" style={{ color: active ? '#6366f1' : 'rgba(255,255,255,0.4)' }} />
+                      : <Icon className="w-4 h-4" style={{ color: active ? '#4db8ff' : 'rgba(255,255,255,0.4)' }} />
                     }
                   </div>
                   <span className="text-xs hidden sm:block"
@@ -171,9 +171,9 @@ export default function OnboardingPagina() {
                       onClick={() => setWoning(p => ({ ...p, type: t }))}
                       className="py-2 px-3 rounded-xl text-sm font-medium capitalize transition-all"
                       style={{
-                        background: woning.type === t ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.05)',
-                        border: `1px solid ${woning.type === t ? 'rgba(99,102,241,0.4)' : 'rgba(255,255,255,0.08)'}`,
-                        color: woning.type === t ? '#6366f1' : 'rgba(255,255,255,0.6)',
+                        background: woning.type === t ? 'rgba(77,184,255,0.2)' : 'rgba(255,255,255,0.05)',
+                        border: `1px solid ${woning.type === t ? 'rgba(77,184,255,0.4)' : 'rgba(255,255,255,0.08)'}`,
+                        color: woning.type === t ? '#4db8ff' : 'rgba(255,255,255,0.6)',
                       }}
                     >
                       {t}
@@ -261,7 +261,7 @@ export default function OnboardingPagina() {
                     </div>
                     <div className="text-right">
                       <p className="text-white/50 text-xs mb-1">Punten</p>
-                      <p className="text-xl font-bold" style={{ color: '#6366f1' }}>{maxHuurprijs.punten}p</p>
+                      <p className="text-xl font-bold" style={{ color: '#4db8ff' }}>{maxHuurprijs.punten}p</p>
                     </div>
                   </div>
                 </div>

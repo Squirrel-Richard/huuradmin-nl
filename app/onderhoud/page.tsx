@@ -29,9 +29,9 @@ export default function OnderhoudPagina() {
             key={tab}
             className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
             style={{
-              background: i === 0 ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.05)',
-              border: `1px solid ${i === 0 ? 'rgba(99,102,241,0.4)' : 'rgba(255,255,255,0.08)'}`,
-              color: i === 0 ? '#6366f1' : 'rgba(255,255,255,0.5)',
+              background: i === 0 ? 'rgba(77,184,255,0.2)' : 'rgba(255,255,255,0.05)',
+              border: `1px solid ${i === 0 ? 'rgba(77,184,255,0.4)' : 'rgba(255,255,255,0.08)'}`,
+              color: i === 0 ? '#4db8ff' : 'rgba(255,255,255,0.5)',
             }}
           >
             {tab}

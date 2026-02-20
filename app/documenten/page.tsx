@@ -25,7 +25,7 @@ export default function DocumentenPagina() {
       {/* Categories */}
       <div className="grid md:grid-cols-2 gap-4 mb-8">
         {[
-          { icon: FileText, label: 'Huurcontracten', count: 0, color: '#6366f1' },
+          { icon: FileText, label: 'Huurcontracten', count: 0, color: '#4db8ff' },
           { icon: Download, label: 'Jaaroverzichten PDF', count: 0, color: '#10b981' },
         ].map((cat, i) => {
           const Icon = cat.icon
@@ -58,8 +58,8 @@ export default function DocumentenPagina() {
         className="glass-card p-16 text-center"
       >
         <div className="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6"
-          style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)' }}>
-          <FileText className="w-10 h-10 text-indigo-400 animate-breathe" />
+          style={{ background: 'rgba(77,184,255,0.1)', border: '1px solid rgba(77,184,255,0.2)' }}>
+          <FileText className="w-10 h-10 text-blue-400 animate-breathe" />
         </div>
         <h2 className="text-xl font-semibold text-white mb-3">Nog geen documenten</h2>
         <p className="text-white/40 text-sm max-w-md mx-auto mb-8 leading-relaxed">

@@ -13,6 +13,8 @@ import {
   Tag,
   PlusCircle,
   Building2,
+  Home,
+  LogOut,
 } from 'lucide-react'
 
 const navItems = [
@@ -22,7 +24,6 @@ const navItems = [
   { href: '/betalingen', label: 'Betalingen', icon: Euro },
   { href: '/onderhoud', label: 'Onderhoud', icon: Wrench },
   { href: '/documenten', label: 'Documenten', icon: FileText },
-  { href: '/prijzen', label: 'Upgrade', icon: Tag },
 ]
 
 export default function Sidebar() {
@@ -35,36 +36,43 @@ export default function Sidebar() {
       transition={{ duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
       className="fixed left-0 top-0 h-full w-56 z-40 flex flex-col"
       style={{
-        background: 'rgba(6, 6, 15, 0.85)',
+        background: 'rgba(3,8,16,0.92)',
         backdropFilter: 'blur(24px)',
         WebkitBackdropFilter: 'blur(24px)',
-        borderRight: '1px solid rgba(255,255,255,0.06)',
+        borderRight: '1px solid rgba(255,255,255,0.05)',
       }}
     >
       {/* Logo */}
-      <div className="p-6 mb-2">
-        <Link href="/" className="flex items-center gap-2">
+      <div className="p-5 mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+        <Link href="/" className="flex items-center gap-2.5">
           <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold"
-            style={{ background: 'linear-gradient(135deg, #6366f1, #22d3ee)' }}
+            className="w-8 h-8 rounded-lg flex items-center justify-center"
+            style={{ background: 'rgba(77,184,255,0.12)', border: '1px solid rgba(77,184,255,0.2)' }}
           >
-            H
+            <Building2 className="w-4 h-4" style={{ color: '#4db8ff' }} />
           </div>
           <div>
-            <span className="font-semibold text-white text-sm block leading-tight">HuurAdmin</span>
-            <span className="text-white/30 text-xs">.nl</span>
+            <span className="font-bold text-white text-sm block leading-tight tracking-tight">HuurAdmin</span>
+            <span className="text-xs" style={{ color: 'rgba(221,232,245,0.3)' }}>NL</span>
           </div>
         </Link>
       </div>
 
       {/* Add property button */}
-      <div className="px-4 mb-4">
+      <div className="px-3 py-3">
         <Link
-          href="/onboarding"
-          className="flex items-center gap-2 w-full px-3 py-2 rounded-xl text-sm font-medium text-white transition-all"
+          href="/woning"
+          className="flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-sm font-semibold transition-all"
           style={{
-            background: 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(34,211,238,0.1))',
-            border: '1px solid rgba(99,102,241,0.3)',
+            background: 'rgba(77,184,255,0.1)',
+            border: '1px solid rgba(77,184,255,0.2)',
+            color: '#4db8ff',
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.background = 'rgba(77,184,255,0.18)'
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.background = 'rgba(77,184,255,0.1)'
           }}
         >
           <PlusCircle className="w-4 h-4" />
@@ -73,15 +81,35 @@ export default function Sidebar() {
       </div>
 
       {/* Nav */}
-      <nav className="flex-1 px-3 space-y-1">
+      <nav className="flex-1 px-3 space-y-0.5 overflow-y-auto py-2">
         {navItems.map((item) => {
           const Icon = item.icon
-          const active = pathname === item.href || pathname.startsWith(item.href + '/')
+          const active = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href + '/'))
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={`nav-item ${active ? 'active' : ''}`}
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all"
+              style={active ? {
+                background: 'rgba(77,184,255,0.1)',
+                color: '#4db8ff',
+                border: '1px solid rgba(77,184,255,0.15)',
+              } : {
+                color: 'rgba(221,232,245,0.5)',
+                border: '1px solid transparent',
+              }}
+              onMouseEnter={e => {
+                if (!active) {
+                  e.currentTarget.style.color = '#dde8f5'
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
+                }
+              }}
+              onMouseLeave={e => {
+                if (!active) {
+                  e.currentTarget.style.color = 'rgba(221,232,245,0.5)'
+                  e.currentTarget.style.background = 'transparent'
+                }
+              }}
             >
               <Icon className="w-4 h-4 flex-shrink-0" />
               {item.label}
@@ -90,25 +118,42 @@ export default function Sidebar() {
         })}
       </nav>
 
-      {/* Footer */}
-      <div className="p-4">
+      {/* Upgrade card */}
+      <div className="px-3 pb-3">
         <div
-          className="glass-card p-3 text-center"
-          style={{ borderRadius: '12px' }}
+          className="p-4 rounded-xl mb-2"
+          style={{
+            background: 'rgba(77,184,255,0.06)',
+            border: '1px solid rgba(77,184,255,0.12)',
+          }}
         >
-          <div className="flex items-center justify-center gap-1 mb-1">
-            <Building2 className="w-3 h-3 text-white/40" />
-            <p className="text-xs text-white/40">Gratis plan</p>
+          <div className="flex items-center gap-2 mb-1">
+            <Home className="w-3.5 h-3.5" style={{ color: 'rgba(221,232,245,0.4)' }} />
+            <p className="text-xs font-medium" style={{ color: 'rgba(221,232,245,0.4)' }}>Gratis plan</p>
           </div>
-          <p className="text-xs text-white/60">1 van 1 woningen</p>
+          <p className="text-xs mb-3" style={{ color: 'rgba(221,232,245,0.6)' }}>1 van 1 woningen</p>
+          <div className="progress-bar mb-3">
+            <div className="progress-fill" style={{ width: '100%' }} />
+          </div>
           <Link
             href="/prijzen"
-            className="block mt-2 text-xs font-semibold"
-            style={{ color: 'var(--primary)' }}
+            className="block text-center py-1.5 rounded-lg text-xs font-bold transition-all"
+            style={{ background: 'rgba(77,184,255,0.15)', color: '#4db8ff', border: '1px solid rgba(77,184,255,0.25)' }}
           >
-            Upgrade →
+            Upgrade naar Pro →
           </Link>
         </div>
+
+        <Link
+          href="/"
+          className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs transition-colors w-full"
+          style={{ color: 'rgba(221,232,245,0.3)' }}
+          onMouseEnter={e => { e.currentTarget.style.color = 'rgba(221,232,245,0.6)' }}
+          onMouseLeave={e => { e.currentTarget.style.color = 'rgba(221,232,245,0.3)' }}
+        >
+          <LogOut className="w-3.5 h-3.5" />
+          Uitloggen
+        </Link>
       </div>
     </motion.aside>
   )

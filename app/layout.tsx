@@ -7,22 +7,24 @@ const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin']
 
 export const metadata: Metadata = {
   title: {
-    default: 'HuurAdmin NL — Slimste verhuurbeheertool | Betaalbare Huurwet 2024 compliant',
+    default: 'HuurAdmin NL — Verhuur beheren zonder zorgen | Betaalbare Huurwet 2024',
     template: '%s | HuurAdmin NL',
   },
   description:
-    'Beheer al uw huurwoningen eenvoudig. Huurprijscheck conform Betaalbare Huurwet 2024, betalingstracking, onderhoud log en jaaroverzicht PDF. Voor Nederlandse particuliere verhuurders.',
+    'De enige NL-first verhuurbeheertool volledig compliant met de Betaalbare Huurwet 2024. Huurprijscheck puntenstelsel, betalingstracking, WhatsApp reminders en jaaroverzicht PDF. Voor Nederlandse particuliere verhuurders.',
   keywords: [
-    'huur beheren app NL',
+    'huur beheren app Nederland',
     'Betaalbare Huurwet 2024 tool',
     'huurprijscheck puntenstelsel',
-    'verhuurder software Nederland',
+    'verhuurder software NL',
     'huuradministratie particulier',
     'maximale huurprijs berekenen',
-    'puntenstelsel huur',
-    'huurwoning beheer',
-    'sociale huur calculator',
-    'verhuurder app',
+    'puntenstelsel huurwoning',
+    'huurwoning beheer app',
+    'verhuurder app Nederland',
+    'gereguleerde sector huurprijs',
+    'huurrecht compliant',
+    'iDEAL verhuurder betaling',
   ],
   authors: [{ name: 'AIOW BV' }],
   creator: 'AIOW BV',
@@ -32,18 +34,27 @@ export const metadata: Metadata = {
     locale: 'nl_NL',
     url: 'https://huuradmin.nl',
     siteName: 'HuurAdmin NL',
-    title: 'HuurAdmin NL — Verhuurbeheertool Betaalbare Huurwet 2024',
-    description: 'De compleet Nederlandse verhuurbeheertool. Huurprijscheck, betalingen, onderhoud. Compliant met de Betaalbare Huurwet 2024.',
+    title: 'HuurAdmin NL — Verhuur beheren zonder zorgen',
+    description: 'Compliant met de Betaalbare Huurwet 2024. Huurprijscheck, betalingstracking, WhatsApp reminders en PDF jaaroverzicht voor NL verhuurders.',
+    images: [
+      {
+        url: '/api/og',
+        width: 1200,
+        height: 630,
+        alt: 'HuurAdmin NL — Verhuur beheren zonder zorgen',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HuurAdmin NL — Verhuurbeheertool',
-    description: 'Betaalbare Huurwet 2024 compliant. Huurprijscheck, betalingstracking, onderhoud log.',
+    title: 'HuurAdmin NL — Verhuur beheren zonder zorgen',
+    description: 'Betaalbare Huurwet 2024 compliant. Huurprijscheck, betalingstracking, WhatsApp reminders voor NL verhuurders.',
+    images: ['/api/og'],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
   alternates: {
     canonical: 'https://huuradmin.nl',
@@ -53,7 +64,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nl" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body style={{ background: '#06060f' }}>
+      <body style={{ background: '#030810', margin: 0 }}>
         {children}
       </body>
     </html>

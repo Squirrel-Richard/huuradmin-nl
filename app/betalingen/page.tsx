@@ -36,7 +36,7 @@ export default function BetalingenPagina() {
         {[
           { label: 'Betaald', value: '—', color: '#10b981', cls: 'badge-betaald' },
           { label: 'Te laat', value: '—', color: '#f59e0b', cls: 'badge-te-laat' },
-          { label: 'Verwacht', value: '—', color: '#6366f1', cls: 'badge-verwacht' },
+          { label: 'Verwacht', value: '—', color: '#4db8ff', cls: 'badge-verwacht' },
         ].map((s, i) => (
           <motion.div
             key={i}

@@ -32,8 +32,8 @@ export default function WoningDetailPagina({ params }: { params: { id: string } 
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center"
-              style={{ background: 'rgba(99,102,241,0.15)' }}>
-              <Building2 className="w-5 h-5 text-indigo-400" />
+              style={{ background: 'rgba(77,184,255,0.15)' }}>
+              <Building2 className="w-5 h-5 text-blue-400" />
             </div>
             <h2 className="text-white font-semibold">Woning gegevens</h2>
           </div>
@@ -94,7 +94,7 @@ export default function WoningDetailPagina({ params }: { params: { id: string } 
           {[
             { icon: Euro, label: 'Betalingen', href: '/betalingen', color: '#10b981' },
             { icon: Wrench, label: 'Onderhoud', href: '/onderhoud', color: '#f59e0b' },
-            { icon: Calculator, label: 'Huurprijscheck', href: '/huurprijscheck', color: '#6366f1' },
+            { icon: Calculator, label: 'Huurprijscheck', href: '/huurprijscheck', color: '#4db8ff' },
           ].map((action, i) => {
             const Icon = action.icon
             return (

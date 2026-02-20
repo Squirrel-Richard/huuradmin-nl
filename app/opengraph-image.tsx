@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'HuurAdmin NL — Verhuurbeheertool voor Nederlandse verhuurders'
+export const alt = 'HuurAdmin NL — Verhuur beheren zonder zorgen'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -12,7 +12,7 @@ export default async function Image() {
         style={{
           width: '1200px',
           height: '630px',
-          background: '#06060f',
+          background: '#030810',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -22,17 +22,20 @@ export default async function Image() {
           fontFamily: 'sans-serif',
         }}
       >
-        {/* Background gradient */}
+        {/* Blue glow */}
         <div
           style={{
             position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'radial-gradient(ellipse at 30% 50%, rgba(99,102,241,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(139,92,246,0.1) 0%, transparent 60%)',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '800px',
+            height: '400px',
+            background: 'radial-gradient(ellipse, rgba(77,184,255,0.12) 0%, transparent 70%)',
+            pointerEvents: 'none',
           }}
         />
+
         {/* Icon */}
         <div
           style={{
@@ -41,50 +44,55 @@ export default async function Image() {
             justifyContent: 'center',
             width: '80px',
             height: '80px',
-            background: 'rgba(99,102,241,0.2)',
+            background: 'rgba(77,184,255,0.15)',
             borderRadius: '20px',
-            border: '1px solid rgba(99,102,241,0.4)',
-            marginBottom: '32px',
+            border: '1px solid rgba(77,184,255,0.3)',
+            marginBottom: '28px',
+            fontSize: '40px',
           }}
         >
-          <div style={{ fontSize: '40px' }}>🏠</div>
+          🏠
         </div>
+
         {/* Product name */}
         <div
           style={{
             fontSize: '72px',
             fontWeight: 900,
-            color: '#ffffff',
-            letterSpacing: '-2px',
-            marginBottom: '16px',
+            color: '#dde8f5',
+            letterSpacing: '-3px',
+            marginBottom: '12px',
             textAlign: 'center',
-            lineHeight: 1.1,
+            lineHeight: 1.05,
           }}
         >
           HuurAdmin NL
         </div>
+
         {/* Tagline */}
         <div
           style={{
-            fontSize: '28px',
-            color: '#94a3b8',
+            fontSize: '26px',
+            color: '#4db8ff',
             textAlign: 'center',
-            maxWidth: '700px',
-            lineHeight: 1.4,
+            marginBottom: '16px',
+            fontWeight: 600,
           }}
         >
-          Verhuurbeheertool voor Nederlandse particuliere verhuurders
+          Verhuur beheren zonder zorgen
         </div>
+
         <div
           style={{
-            fontSize: '20px',
-            color: '#6b7280',
+            fontSize: '18px',
+            color: 'rgba(221,232,245,0.45)',
             textAlign: 'center',
-            marginTop: '12px',
+            maxWidth: '700px',
           }}
         >
-          Betaalbare Huurwet 2024 compliant · Huurprijscheck · Jaaroverzicht PDF
+          Compliant met Betaalbare Huurwet 2024 · Huurprijscheck · WhatsApp reminders · PDF jaaroverzicht
         </div>
+
         {/* Bottom row */}
         <div
           style={{
@@ -97,24 +105,25 @@ export default async function Image() {
             alignItems: 'center',
           }}
         >
-          <div style={{ display: 'flex', gap: '24px' }}>
-            {['Huurwet 2024', 'Puntenstelsel', 'WhatsApp'].map((tag) => (
+          <div style={{ display: 'flex', gap: '16px' }}>
+            {['Huurwet 2024', 'iDEAL', 'WhatsApp reminders'].map(tag => (
               <div
                 key={tag}
                 style={{
-                  background: 'rgba(99,102,241,0.15)',
-                  border: '1px solid rgba(99,102,241,0.3)',
-                  borderRadius: '20px',
+                  background: 'rgba(77,184,255,0.1)',
+                  border: '1px solid rgba(77,184,255,0.25)',
+                  borderRadius: '100px',
                   padding: '6px 16px',
-                  color: '#a5b4fc',
-                  fontSize: '16px',
+                  color: '#4db8ff',
+                  fontSize: '15px',
+                  fontWeight: 600,
                 }}
               >
                 {tag}
               </div>
             ))}
           </div>
-          <div style={{ color: '#4b5563', fontSize: '14px' }}>AIOW BV</div>
+          <div style={{ color: 'rgba(221,232,245,0.2)', fontSize: '14px' }}>AIOW BV</div>
         </div>
       </div>
     ),
